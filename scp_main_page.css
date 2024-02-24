@@ -1,0 +1,30 @@
+h1 {
+   font-size: 500%;
+   float: center; 
+   text-align: center;
+}
+
+p {
+   font-size: 200%;
+}
+
+nav {
+   float: left;
+   text-align: left; 
+   background-color: red;
+   block-size: 500px; 
+}
+
+aside {
+   float: right; 
+   text-align: center; 
+   background-color: red;
+   block-size: 500px;
+}
+
+section {
+   float: center; 
+   text-align: center;
+   background-color: blue;
+   block-size: 500px;
+}
