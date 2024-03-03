@@ -11,19 +11,22 @@ static const string navLinks[6] = {"safe.html", "euclid.html", "keter.html", "I.
 const int MAX_CODE_LINES = 500;
 
 //Change Navigation Bar Function
+//Objectives: The html file will be opened if not already, and will check each element of the navigation
+//			  bar and change it to the required item in the priority list.
 //Prereqs: The priority list is different than the current list in the html file. Priority list has a
 //         reference to only one of each item entity in navOptions.
 //Postreq: The html file navigation code has been adjusted to reflect the updated priority list
-//Objectives: The html file will be opened if not already, and will check each element of the navigation
-//			  bar and change it to the required item in the priority list.
 //Notes: itemSpots refers to the same spots in navOptions. For example both [0] are refering to
-//       "Class: Safe" location
+//       "Class: Safe" location. priorityList will keep track of the list of items in the order that they
+//       should come out. For example if the list looks like {5, 4, 3, 2, 1, 0} then the order will be
+//		 "Series: III", "Series II", "Series: I", etc.
 bool changeNavBar(fstream *HTMLFile, int priorityList[])
 {
 	//Local Variables
 	int navSpot = 0, numLines = 0, itemSpots[6], currentItem = 0, count = 0, start = 0;
 	string ReplacementCode[MAX_CODE_LINES];
 	bool notFound = true;
+	ofstream newHTML = ofstream();
 	
 	//Check if stream is open
 	if (!HTMLFile->is_open())
@@ -146,8 +149,25 @@ bool changeNavBar(fstream *HTMLFile, int priorityList[])
 	//Change the links
 	//TODO
 	
-	//Apply changes to HTML Document
-	//TODO
+	//Apply changes to new HTML Document
+	//Create new HTML document
+	newHTML.open("newHTML.html");
+	
+	//Check if new document has been created
+	if (newHTML.is_open())
+	{
+		//Write each line to document
+		for (count = 0; count < numLines; count ++)
+		{
+			newHTML << ReplacementCode[count] << endl;
+		}
+	}
+	else
+	{
+		//Print error statement
+		cout << "Error: Failed to create new file\n";
+		return false;
+	}
 	
 	return true;
 }
