@@ -1,0 +1,71 @@
+.flex-container {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+}
+
+.v1 {
+   border-left: 10px;
+   height: 500px;
+}
+
+h1 {
+   font-size: 500%;
+   display: inline-block; 
+   text-align: center;
+   width: 70%;
+   color: white;
+}
+
+h2 {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 500%;
+   color: maroon; 
+   width: 45%;
+   border-style: double;
+   border-color: black;
+   border-width: 10px;
+   
+}
+
+p {
+   font-size: 200%;
+   color: white;
+}
+
+a {
+   border-style: inset;
+   border-color: black;
+   border-width: 10px;
+   color: white;
+}
+
+nav {
+   float: left;
+   text-align: center; 
+   block-size: 500px; 
+   width: 15%;
+   border-style: solid;
+}
+
+aside {
+   float: right; 
+   text-align: center; 
+   block-size: 500px;
+   width: 15%;
+   border-style: solid;
+}
+
+section {
+   text-align: center;
+   block-size: 500px;
+   width: 70%;
+   border-style: solid;
+}
+
+body {
+   background: #ffffff;
+   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(103,61,61,1) 100%);
+}
