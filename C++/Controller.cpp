@@ -25,10 +25,17 @@ bool testingHTMLChange()
 bool testingGitHub()
 {
 	//Initalize Variables
-	char localRepo[100] = "F:\Desktop\CS 386 Project\deployed_website\.git";
+	char localRepo[] = "F:\Desktop\CS 386 Project\deployed_website\.git";
 	bool success = false;
 
-	cout << "launching repo.\n";
+	cout << "Setup git\n";
+
+	if (!setup())
+	{
+		return false;
+	}
+
+	cout << "Setting up repo.\n";
 
 	//Connect to local repo
 	if (!connectToRepository(localRepo))

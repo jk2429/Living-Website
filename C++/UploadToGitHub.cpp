@@ -8,6 +8,23 @@ using namespace std;
 //Prereqs: 
 //Postreq: 
 //Notes: 
+bool setup()
+{
+	error = git_libgit2_init();
+	if (error < 0)
+	{
+		cout << "Error: Code " << error << ": Failed setting up git library.\n";
+		return false;
+	}
+
+	return true;
+}
+
+//Connect to repository function
+//Objectives: 
+//Prereqs: 
+//Postreq: 
+//Notes: 
 bool connectToRepository(char* localRepo)
 {
 	//Initialize the repository
@@ -16,7 +33,7 @@ bool connectToRepository(char* localRepo)
 	//Check for success
 	if (error < 0)
 	{
-		cout << "Repo failed to initialize.\n";
+		cout << "Error: Code " << error << ": Repo failed to initialize.\n";
 		return false;
 	}
 
@@ -42,7 +59,7 @@ bool pushFiles()
 	//Check for errors
 	if (error < 0)
 	{
-		cout << "Error: Could not remote into repository.\n";
+		cout << "Error: Code " << error << ": Could not remote into repository.\n";
 		return false;
 	}
 
@@ -52,7 +69,7 @@ bool pushFiles()
 	//Check for errors
 	if (error < 0)
 	{
-		cout << "Error: Could not add local repo to push option.\n";
+		cout << "Error: Code " << error << ": Could not add local repo to push option.\n";
 		return false;
 	}
 
@@ -62,7 +79,7 @@ bool pushFiles()
 	//Check for errors
 	if (error < 0)
 	{
-		cout << "Error: Could not create push options.\n";
+		cout << "Error: Code " << error << ": Could not create push options.\n";
 		return false;
 	}
 
@@ -72,7 +89,7 @@ bool pushFiles()
 	//Check for errors
 	if (error < 0)
 	{
-		cout << "Error: Could no upload to repository.\n";
+		cout << "Error: Code " << error << ": Could no upload to repository.\n";
 		return false;
 	}
 
