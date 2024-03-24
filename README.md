@@ -8,24 +8,23 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-TODO
+* Any C++ Compiler or IDE  
+  * LibGit2 C++ Library for work on release 2
+* Git installed on your machine
+* A microsoft azure account for editing the example website (free tier)
 
 ### Installing
 
-TODO
+  Simply download the raw files from github, no installation required.
 
 ## Running the tests
 
-TODO
-
-## Deployment
-
-TODO
+We use try/catch to allow the program to run through a series of tests and print out any tests that failed/succeeded and fix bugs from within the program. The test files are stored separately from the main C++ code in the folder found [here](PASTETHELINKHERE.please). You can compile and run the tests the same as the other C++ code.
 
 ## Built With
 
 * [Azure](https://azure.microsoft.com/en-us): Blob storage and static website hosting
-* TODO
+* [MySQL](https://www.mysql.com/): Database hosting and connection
 
 ## Contributing
 
@@ -42,3 +41,5 @@ See the list of [contributors](https://github.com/jk2429/Living-Website/graphs/c
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE) file for details
+
+The template for this document is from [this repository](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
