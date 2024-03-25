@@ -1,0 +1,9 @@
+## Location
+For ease of use with connecting different programming technologies to the database we decided to host the database
+on campus at NAU.  This allows for heigtened security and ease of connection by the main group members while maximizing
+the uptime of the server.
+
+## Software
+We are using the software provided by NAU.  We were provided with a shell to access and edit the database which requires
+multiple forms of authentication.  This shell connects us to a SQL back end allowing us to use standard SQL to create, 
+edit, and maintain the database.
