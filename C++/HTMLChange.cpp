@@ -13,7 +13,7 @@ using namespace std;
 //       "Class: Safe" location. priorityList will keep track of the list of items in the order that they
 //       should come out. For example if the list looks like {5, 4, 3, 2, 1, 0} then the order will be
 //		 "Series: III", "Series II", "Series: I", etc.
-bool changeNavBar(fstream *HTMLFile, int priorityList[])
+bool changeNavBar(fstream *HTMLFile, int priorityList[], string fileName)
 {
 	//Local Variables
 	int navSpot = 0, numLines = 0, itemSpots[MAX_NAV_OPTIONS], currentItem = 0, count = 0, start = 0;
@@ -227,7 +227,7 @@ bool changeNavBar(fstream *HTMLFile, int priorityList[])
 	
 	//Apply changes to new HTML Document
 	//Create new HTML document
-	newHTML.open("../../../New HTML Files/newHTML.html");
+	newHTML.open("../../../New HTML Files/new_" + fileName);
 	
 	//Check if new document has been opened
 	if (newHTML.is_open())

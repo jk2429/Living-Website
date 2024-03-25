@@ -11,17 +11,36 @@ bool testingHTMLChange()
 {
 	//Initalize Variables
 	fstream HTMLFile = fstream();
-	int priorityList[6] = { 5,3,1,0,4,2 };
+	int priorityList[6] = { 5,4,3,2,1,0 }, count;
+	string filesToOpen[7] = {"../../../HTML Files/scp_main_page.html", "../../../HTML Files/scp_081_page.html", "../../../HTML Files/scp_999_page.html",
+							"../../../HTML Files/scp_1990_page.html", "../../../HTML Files/scp_2006_page.html",  "../../../HTML Files/scp_2161_page.html",
+							"../../../HTML Files/scp_8012_page.html"};
 
-	HTMLFile.open("../../../HTML Files/scp_main_page.html");
+	//Loop until no more files
+	for (count = 0; count < 7; count++)
+	{
+		try
+		{
+			HTMLFile.open(filesToOpen[count]);
 
-	bool temp = changeNavBar(&HTMLFile, priorityList);
+			if (!changeNavBar(&HTMLFile, priorityList, filesToOpen[count].substr(20, string::npos)))
+			{
+				HTMLFile.close();
+				throw count;
+			}
 
-	HTMLFile.close();
+			HTMLFile.close();
+		}
+		catch (int number)
+		{
+			cout << "Run " << number << " failed: " << filesToOpen[number] << endl;
+		}
+	}
 
-	return temp;
+	return true;
 }
 
+/*
 bool testingGitHub()
 {
 	//Initalize Variables
@@ -58,10 +77,11 @@ bool testingGitHub()
 
 	return true;
 }
+*/
 
 int main()
 {
 	//Initialize Variables
 
-	return testingGitHub();
+	return testingHTMLChange();
 }
